@@ -15,5 +15,8 @@ RUN pip install -r requirements.txt
 # add app
 COPY . .
 
+COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+
 # run server
 CMD python manage.py run -h 0.0.0.0
